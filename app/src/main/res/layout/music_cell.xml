@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <TextView
+        android:id="@+id/musicname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你是我的眼"
+        android:ellipsize="end"
+        android:maxEms="15"
+        android:singleLine="true"
+        android:textColor="?android:attr/textColorPrimaryNoDisable"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/musicauthor"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/musicauthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="7dp"
+        android:text="林宥嘉"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/musictime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="04:30"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.82" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:width="1dp"
+        android:background="@android:color/secondary_text_dark"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintStart_toEndOf="@+id/musicauthor"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+    <TextView
+        android:id="@+id/songrecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="唱片名称"
+        android:textSize="10sp"
+        android:maxEms="15"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/musictime"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <TextView
+        android:id="@+id/songid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="# 1"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/musicname"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/musicname"
+        app:layout_constraintTop_toTopOf="@+id/musicname" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.761" />
+
+    <TextView
+        android:id="@+id/itemchoice"
+        android:layout_width="3dp"
+        android:layout_height="0dp"
+        android:background="@color/design_default_color_on_secondary"
+        app:layout_constraintBottom_toBottomOf="@+id/musicauthor"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/musicname"
+        app:layout_constraintVertical_bias="0.59000003" />
+</androidx.constraintlayout.widget.ConstraintLayout>
