@@ -78,7 +78,6 @@ public class MusicPlayerService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-
         //发送播放器AudioSessionId
         playMusicIntent.putExtra("autoSessionID", mediaPlayer.getAudioSessionId());
         sendBroadcast(playMusicIntent);
