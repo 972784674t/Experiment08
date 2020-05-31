@@ -1,11 +1,5 @@
 package com.example.experiment08;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSmoothScroller;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Service;
@@ -19,7 +13,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
-import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -34,12 +27,17 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-
 
 import me.bogerchan.niervisualizer.NierVisualizerManager;
 import me.bogerchan.niervisualizer.renderer.IRenderer;
@@ -81,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //暂停音乐时进度条的位置
     int currentPausePosition = 0;
 
-    //NierVisualizerManager绘图
+    //音乐可视化NierVisualizerManager绘图
     NierVisualizerManager visualizerManager;
 
     //播放状态管理: -1 未在播放状态  1 正在播放状态  2 暂停状态
@@ -315,7 +313,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     /**
      * 播放上一首歌曲逻辑设计，同时更新UI
      */
@@ -376,7 +373,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         currentPlayPosition = songPosition;
         playbtn.bringToFront();
     }
-
 
 
     /**
@@ -447,7 +443,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                     case NEXT_MUSIC:
                         int next = intent.getExtras().getInt("isPlayNextMusic");
-                        Log.d(TAG,"nextSong"+next);
+                        Log.d(TAG, "nextSong" + next);
                         //last_nextSongUIUpdate(currentPlayPosition,-1);
                         break;
                     default:
@@ -494,10 +490,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TopSmoothScroller(Context context) {
             super(context);
         }
+
         @Override
         protected int getHorizontalSnapPreference() {
             return SNAP_TO_START;
         }
+
         @Override
         protected int getVerticalSnapPreference() {
             return SNAP_TO_START;

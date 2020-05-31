@@ -34,7 +34,8 @@ class MusicUtils {
         int id = 0;
         assert cursor != null;
         while ( cursor.moveToNext() ){
-            if(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA)).indexOf("qqmusic/ringtones") > 0) {
+            //指定文件夹中的音乐文件
+//            if(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA)).indexOf("qqmusic/ringtones") > 0) {
                 Music music = new Music();
                 id++;
                 music.setMusic_id(String.valueOf(id));
@@ -50,7 +51,7 @@ class MusicUtils {
                 music.setMusic_Draution(duration);
 
                 musicList.add(music);
-            }
+//            }
         }
         cursor.close();
         return musicList;

@@ -1,8 +1,9 @@
 package com.example.experiment08;
 
-import androidx.lifecycle.ViewModel;
-
-class Music extends ViewModel {
+/**
+ * 音乐对象类
+ */
+public class Music {
 
     //歌曲名id
     private String music_id;
@@ -23,7 +24,7 @@ class Music extends ViewModel {
     private String music_url;
 
     //已经播放时长
-    private String music_CurrentPosition; //已经播放时长
+    private String music_CurrentPosition;
 
 
     String getMusic_id() {
@@ -66,7 +67,7 @@ class Music extends ViewModel {
         this.music_Record = music_Record;
     }
 
-    String getMusic_url() {
+    public String getMusic_url() {
         return music_url;
     }
 

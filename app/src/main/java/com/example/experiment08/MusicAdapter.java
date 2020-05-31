@@ -5,18 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-
 import androidx.recyclerview.widget.RecyclerView;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author cimo
+ */
 public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicItem> {
 
+    //记录上次选择位置
     private static int LAST_CHOICE = -1;
+    //记录当前选择位置
     private static int NOW_CHOICE = -1;
 
     private List<Music> musics = new ArrayList<>();
@@ -34,7 +35,6 @@ public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicItem> {
     //点击事件接口回调
     public interface OnItemClickListener {
         void OnItemClick(View view, int position);
-
     }
 
     @NonNull

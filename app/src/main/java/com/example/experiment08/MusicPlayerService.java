@@ -8,13 +8,15 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 
+/**
+ * @author cimo
+ */
 public class MusicPlayerService extends Service {
 
     public static final String TAG = "MusicPlayerService";
@@ -76,6 +78,7 @@ public class MusicPlayerService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+
         //发送播放器AudioSessionId
         playMusicIntent.putExtra("autoSessionID", mediaPlayer.getAudioSessionId());
         sendBroadcast(playMusicIntent);
@@ -89,7 +92,6 @@ public class MusicPlayerService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-
         return new MusicBinder();
     }
 
@@ -126,7 +128,7 @@ public class MusicPlayerService extends Service {
     /**
      * 通过music的position指定播放音乐
      *
-     * @param music 需要播放的音乐
+     * @param music 需要播放的音乐对象
      */
     private void playMusicInPosition(Music music) {
         //如果是播放状态或者暂停状态则销毁重建mediaPlayer
