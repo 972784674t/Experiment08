@@ -145,14 +145,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         };
-
         startService(MusicPlayerServiceIntent);
         bindService(MusicPlayerServiceIntent, connection, Service.BIND_AUTO_CREATE);
-
         init();
-
         setEventListener();
-
     }
 
     @Override
